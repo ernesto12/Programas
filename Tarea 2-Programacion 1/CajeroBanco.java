@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 import java.io.InputStreamReader;
 
-import sun.misc.Cleaner;
 //1-Usuario Visa
 /** nombre:Juan Ferreras
  * id: 1207
@@ -45,7 +43,7 @@ public class CajeroBanco {
 		int menu=0,menuEfectivo=0,tarjetas;
 	    int balanceCajero = 100000;
 		int decision=0;
-		int p=0,de=0,y,l[]={2000,1000,500,200,100},p1=0,exit=509;
+		int p=0,j=0,y,l[]={2000,1000,500,200,100},p1=0,exit=509;
 		
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     while(exit!=3){
@@ -61,16 +59,21 @@ public class CajeroBanco {
     	System.out.println("No hay tarjetas asignadas con esta opcion...\nSeleccione una de las anteriores: ");
     	tarjetas = Integer.parseInt(br.readLine());}
     
-        System.out.println("Digite su id: ");
-        z = Integer.parseInt(br.readLine());
-    while((z!= 1207) && (z!=2010) &&(z!=2303) && (z!=1107) && (z!=2012)){
-        System.out.println("Id incorrecto...\nDigite de nuevo su Id\n");
-        z = Integer.parseInt(br.readLine());}
+       
+    System.out.println("Digite su id: ");
+    z = Integer.parseInt(br.readLine());
+while((z!= 1207) && (z!=2010) &&(z!=2303) && (z!=1107) && (z!=2012)){
+   System.out.println("Id incorrecto... ");
+   System.out.println("Digite de nuevo su Id\n");
+   z = Integer.parseInt(br.readLine());
+   
+}
    
    
 //Tarjeta Visa
     Cliente juan=new Cliente("Juan","Ferreras",1207,2378,90000);
     if(tarjetas==1){
+    	
         if(z==juan.idcuenta){
 	    System.out.println("Digite su contraseña");
 	    x = Integer.parseInt(br.readLine());
@@ -86,7 +89,7 @@ public class CajeroBanco {
 	}
 	
 	
-	decision=1;
+  decision=1;
   while (decision!=2){
      if(x== juan.clave){
 			         System.out.printf("Tarjeta Visa Bienvenido %s  %s",juan.nombre,juan.apellido);
