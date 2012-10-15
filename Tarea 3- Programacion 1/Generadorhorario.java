@@ -75,7 +75,7 @@ public class Generadorhorario {
 
         while (CantProf > 0) {
 
-            System.out.println("Ingrese el nombre del Profesor con la extensión.pdf...\nEj: juan.pdf ");
+            System.out.println("Ingrese el nombre del Profesor: ");
             nombre = sc.readLine();
 
             try {
